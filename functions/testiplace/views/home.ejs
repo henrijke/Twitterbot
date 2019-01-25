@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>poop</title>
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDNH_pEbFFsF1IQN-TFqEqxBJ3VyxlAQgw",
+            authDomain: "henrintwitterbot.firebaseapp.com",
+            databaseURL: "https://henrintwitterbot.firebaseio.com",
+            projectId: "henrintwitterbot",
+            storageBucket: "henrintwitterbot.appspot.com",
+            messagingSenderId: "807834116708"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--
+<h1>
+    otsikko
+</h1>
+<form method= "POST">
+    <p>Enter your breakfast: <input name="breakfast" /></p>
+    <button type="submit">Submit</button>
+</form>-->
+<script>
+    const signInWithGoogle = ()=>{
+        const googleAuthProvider = new firebase.auth.GoogleAuthProvider;
+        firebase.auth().signInWithPopup(googleAuthProvider)
+            .then((data)=>{
+                console.log(data);
+            }).catch((err)=>{
+            console.log(err);
+        })
+    }
+</script>
+<button onclick={signInWithGoogle()}>
+    Sign in with ggogogl
+</button>
+
+
+</body>
+</html>
